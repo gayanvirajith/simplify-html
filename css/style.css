@@ -18,6 +18,9 @@ body {
   color: black;
   background-color: white; }
 
+body, html {
+  height: 100%; }
+
 /* -------------------------------- 
 
 Modules - replace text with background image thanks to https://github.com/CodyHouse, codyhouse.co
@@ -47,10 +50,37 @@ Modules - reusable container thanks to https://github.com/CodyHouse, codyhouse.c
     display: table;
     clear: both; }
 
+/* -------------------------------- 
+
+Remove caption from image
+
+-------------------------------- */
+.cd-img-replace {
+  /* replace text with a background-image */
+  display: inline-block;
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap; }
+
+.cd-scroll-down {
+  position: absolute;
+  left: 50%;
+  right: auto;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transform: translateX(-50%);
+  bottom: 20px;
+  width: 38px;
+  height: 44px;
+  background: url("./images/cd-arrow-bottom.svg") no-repeat center center; }
+
 .wc-header {
   position: absolute;
   top: 0;
   left: 0;
+  background: transparent;
   width: 100%;
   height: 50px;
   background: rgba(255, 255, 255, 0.95);
@@ -62,7 +92,9 @@ Modules - reusable container thanks to https://github.com/CodyHouse, codyhouse.c
     clear: both; }
   @media only screen and (min-width: 768px) {
     .wc-header {
-      height: 70px; } }
+      height: 70px;
+      box-shadow: none;
+      background: rgba(255, 255, 255, 0.5); } }
   .wc-header #wc-logo {
     float: left; }
     .wc-header #wc-logo img {
@@ -157,3 +189,100 @@ Main navigation
           color: #1a1a1a; }
       .wc-main-nav li.active a {
         color: #4d4d4d; } }
+
+/* ------------------------------
+
+    One page section 
+
+-------------------------------*/
+.wc-section {
+  min-height: 100%;
+  position: relative;
+  padding: 2em 0; }
+  .wc-section:nth-of-type(odd) {
+    background-color: white; }
+  .wc-section:nth-of-type(even) {
+    background-color: #f4f4f4; }
+  .wc-section .content-in {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    bottom: auto;
+    right: auto;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -o-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    width: 90%;
+    max-width: 768px;
+    text-align: center; }
+  .wc-section h1 {
+    font-weight: 300;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-size: 1.25rem; }
+  .wc-section p {
+    line-height: 1.6;
+    color: #666666; }
+  @media only screen and (min-width: 768px) {
+    .wc-section h1, .wc-section h2, .wc-section h3, .wc-section h4 {
+      line-height: 1.6;
+      color: #666666; }
+    .wc-section h1 {
+      font-size: 60px;
+      font-size: 3.75rem; }
+    .wc-section h2 {
+      font-size: 45px;
+      font-size: 2.8125rem; }
+    .wc-section h3 {
+      font-size: 30px;
+      font-size: 1.875rem; }
+    .wc-section p {
+      font-size: 20px;
+      font-size: 1.25rem;
+      line-height: 2; } }
+
+.wc-section-bg {
+  position: relative;
+  min-height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center; }
+  .wc-section-bg.wc-bg-1 {
+    background-image: url("./images/bg.jpg"); }
+  @media only screen and (min-width: 768px) {
+    .wc-section-bg h1, .wc-section-bg h2, .wc-section-bg h3, .wc-section-bg h4 {
+      line-height: 1.6;
+      text-shadow: #666 0px 1px 4px; }
+    .wc-section-bg h1 {
+      font-size: 60px;
+      font-size: 3.75rem; }
+    .wc-section-bg h2 {
+      font-size: 45px;
+      font-size: 2.8125rem; }
+    .wc-section-bg h3 {
+      font-size: 30px;
+      font-size: 1.875rem; }
+    .wc-section-bg p {
+      font-size: 20px;
+      font-size: 1.25rem;
+      line-height: 2; } }
+  @media only screen and (min-width: 1170px) {
+    .wc-section-bg {
+      background-attachment: fixed; } }
+  .wc-section-bg .content-in {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    bottom: auto;
+    right: auto;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -o-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    width: 90%;
+    max-width: 768px;
+    text-align: center;
+    color: white; }
