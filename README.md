@@ -7,3 +7,7 @@ Simplify is a multipurpose one page website theme.
 ### License
 
 Copyright © 2014 Gayan Virajith. [Licensed under MIT](https://github.com/gayanvirajith/simplify-html/blob/master/LICENSE)
+
+### Status
+
+Work in progress...
