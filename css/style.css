@@ -109,7 +109,7 @@ Main navigation
     line-height: 50px;
     padding-left: 5%;
     border-top: 1px solid #e7e7e7;
-    color: #666;
+    color: #666666;
     background: #f4f4f4;
     font-size: 14px;
     font-size: 0.875rem;
@@ -145,10 +145,15 @@ Main navigation
         background: transparent;
         padding: .6em 1em;
         border-top: none;
-        color: #666666; }
+        color: #666666;
+        -webkit-transition: color, 0.2s;
+        -moz-transition: color, 0.2s;
+        -ms-transition: color, 0.2s;
+        -o-transition: color, 0.2s;
+        transition: color, 0.2s; }
         .no-touch .wc-main-nav a:hover {
           color: #666666; }
-        .wc-main-nav a:hover {
-          color: #4d4d4d; }
+        .wc-main-nav a:hover, .wc-main-nav a:focus, .wc-main-nav a:active {
+          color: #1a1a1a; }
       .wc-main-nav li.active a {
         color: #4d4d4d; } }
