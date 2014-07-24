@@ -53,12 +53,41 @@ Modules - reusable container thanks to https://github.com/CodyHouse, codyhouse.c
 
 .wc-container { 
     width: 90%;
-    max-width: $screen-lg; // breakpoints inside partials > _layout.scss
+    max-width: $L; // breakpoints inside partials > _layout.scss
     margin: 0 auto;
 
     &::after { /* clearfix */
         content: '';
         display: table;
         clear: both;
+    }
+}
+
+.wc-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: $header-height-S;
+    background: rgba($color-white, .95);
+    box-shadow: 0 1px 2px rgba(#000, .2);
+    z-index: 1;        
+    @include clearfix;
+
+    @include MQ(M) {
+        height: $header-height-M;
+    }
+
+    #wc-logo {
+        float:left;
+        img {
+            margin: 7px 0 0 0;
+            max-height: $header-height-S - 15; 
+            display: block;
+            @include MQ(M) { 
+                margin: 10px 0 0 0;
+                max-height: $header-height-M;
+            }
+        }
     }
 }

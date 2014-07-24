@@ -1,0 +1,75 @@
+/* -------------------------------- 
+
+Primary style
+
+-------------------------------- */
+html * {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+body {
+  font-size: 100%;
+  font-family: "Open sans", sans-serif;
+  color: black;
+  background-color: white; }
+
+/* -------------------------------- 
+
+Modules - replace text with background image thanks to https://github.com/CodyHouse, codyhouse.co
+
+-------------------------------- */
+.wc-img-replace {
+  /* replace text with a background-image */
+  display: inline-block;
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+  background-repeat: no-repeat;
+  background-position: center center; }
+
+/* -------------------------------- 
+
+Modules - reusable container thanks to https://github.com/CodyHouse, codyhouse.co
+
+-------------------------------- */
+.wc-container {
+  width: 90%;
+  max-width: 1170px;
+  margin: 0 auto; }
+  .wc-container::after {
+    /* clearfix */
+    content: '';
+    display: table;
+    clear: both; }
+
+.wc-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  z-index: 1; }
+  .wc-header:after {
+    content: "";
+    display: table;
+    clear: both; }
+  @media only screen and (min-width: 768px) {
+    .wc-header {
+      height: 70px; } }
+  .wc-header #wc-logo {
+    float: left; }
+    .wc-header #wc-logo img {
+      margin: 7px 0 0 0;
+      max-height: 35px;
+      display: block; }
+      @media only screen and (min-width: 768px) {
+        .wc-header #wc-logo img {
+          margin: 10px 0 0 0;
+          max-height: 70px; } }
