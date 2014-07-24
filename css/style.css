@@ -73,3 +73,82 @@ Modules - reusable container thanks to https://github.com/CodyHouse, codyhouse.c
         .wc-header #wc-logo img {
           margin: 10px 0 0 0;
           max-height: 70px; } }
+
+/* ------------------------------
+
+Main navigation 
+
+-------------------------------*/
+.wc-main-nav {
+  float: right;
+  height: 50px;
+  width: 44px;
+  background: url("./images/cd-icon-menu.svg") no-repeat center center;
+  background-size: 44px 44px;
+  cursor: pointer; }
+  .wc-main-nav ul {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    list-style: none;
+    -webkit-transform: translateY(-100%);
+    -moz-transform: translateY(-100%);
+    -ms-transform: translateY(-100%);
+    -o-transform: translateY(-100%);
+    transform: translateY(-100%); }
+    .wc-main-nav ul.is-visible {
+      -webkit-transform: translateY(50px);
+      -moz-transform: translateY(50px);
+      -ms-transform: translateY(50px);
+      -o-transform: translateY(50px);
+      transform: translateY(50px); }
+  .wc-main-nav a {
+    display: block;
+    height: 50px;
+    line-height: 50px;
+    padding-left: 5%;
+    border-top: 1px solid #e7e7e7;
+    color: #666;
+    background: #f4f4f4;
+    font-size: 14px;
+    font-size: 0.875rem;
+    text-decoration: none; }
+  @media only screen and (min-width: 768px) {
+    .wc-main-nav {
+      width: auto;
+      height: 70px;
+      background: none;
+      cursor: auto; }
+      .wc-main-nav ul {
+        position: static;
+        width: auto;
+        -webkit-transform: translateY(0);
+        -moz-transform: translateY(0);
+        -ms-transform: translateY(0);
+        -o-transform: translateY(0);
+        transform: translateY(0);
+        line-height: 70px; }
+        .wc-main-nav ul.is-visible {
+          -webkit-transform: translateY(0);
+          -moz-transform: translateY(0);
+          -ms-transform: translateY(0);
+          -o-transform: translateY(0);
+          transform: translateY(0); }
+      .wc-main-nav li {
+        display: inline-block;
+        margin-left: 1em; }
+      .wc-main-nav a {
+        display: inline-block;
+        height: auto;
+        line-height: normal;
+        background: transparent;
+        padding: .6em 1em;
+        border-top: none;
+        color: #666666; }
+        .no-touch .wc-main-nav a:hover {
+          color: #666666; }
+        .wc-main-nav a:hover {
+          color: #4d4d4d; }
+      .wc-main-nav li.active a {
+        color: #4d4d4d; } }
