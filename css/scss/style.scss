@@ -30,6 +30,12 @@ body {
     background-color: $color-white;
 }
 
+
+body, html {
+    height: 100%;
+}
+
+
 /* -------------------------------- 
 
 Modules - replace text with background image thanks to https://github.com/CodyHouse, codyhouse.co
@@ -63,10 +69,35 @@ Modules - reusable container thanks to https://github.com/CodyHouse, codyhouse.c
     }
 }
 
+
+/* -------------------------------- 
+
+Remove caption from image
+
+-------------------------------- */
+
+.cd-img-replace { /* replace text with a background-image */
+    display: inline-block;
+    overflow: hidden;
+    text-indent: 100%;
+    white-space: nowrap;
+}
+
+.cd-scroll-down {
+    position: absolute;
+    @include center(x);
+    bottom: 20px;
+    width: 38px;
+    height: 44px;
+    background: url('./images/cd-arrow-bottom.svg') no-repeat center center;
+}
+
 .wc-header {
     position: absolute;
     top: 0;
-    left: 0;
+    left: 0;;
+        background:transparent;
+
     width: 100%;
     height: $header-height-S;
     background: rgba($color-white, .95);
@@ -76,6 +107,10 @@ Modules - reusable container thanks to https://github.com/CodyHouse, codyhouse.c
 
     @include MQ(M) {
         height: $header-height-M;
+        //background: transparent;
+        box-shadow: none;
+
+        background: rgba($color-white, .5);
     }
 
     #wc-logo {
@@ -171,5 +206,111 @@ Main navigation
         li.active {
             a {color: darken($color-2, 10%);}
         }
+    }
+}
+
+/* ------------------------------
+
+    One page section 
+
+-------------------------------*/
+.wc-section {
+    min-height: 100%;
+    position: relative;
+    padding: 2em 0;
+
+    &:nth-of-type(odd) {
+        background-color: $color-white;
+    }
+
+    &:nth-of-type(even) {
+        background-color: $color-1;
+    }
+    
+    .content-in {
+        position: absolute;
+        @include center;
+        width: 90%;
+        max-width: $M;
+        text-align: center;
+    }
+
+    
+    h1 {
+        font-weight: 300;
+        text-transform: uppercase;
+        @include font-size(20px);
+    }
+
+    p {
+        line-height: 1.6;
+        color: $color-2;
+    }
+
+    @include MQ(M) {
+        h1, h2, h3, h4 { line-height: 1.6; color: $color-2;}
+        h1 {
+            @include font-size(60px);
+        }
+        h2 {
+            @include font-size(45px);   
+        }
+        h3 {
+            @include font-size(30px);
+        }
+
+        p {
+            @include font-size(20px);
+            line-height: 2;
+        }
+    }
+}
+
+.wc-section-bg {
+    position: relative;
+    min-height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+ 
+
+
+    &.wc-bg-1 {
+        background-image: url('./images/bg.jpg');
+    }
+
+    @include MQ(M) {
+        h1, h2, h3, h4 { 
+            line-height: 1.6;
+            text-shadow: #666 0px 1px 4px;
+        }
+        h1 {
+            @include font-size(60px);
+        }
+        h2 {
+            @include font-size(45px);   
+        }
+        h3 {
+            @include font-size(30px);
+        }
+
+        p {
+            @include font-size(20px);
+            line-height: 2;
+        }
+    }
+
+    @include MQ(L) {
+        background-attachment: fixed;
+    }
+
+    .content-in {
+        position: absolute;
+        @include center;
+        width: 90%;
+        max-width: $M;
+        text-align: center;
+
+        color: $color-white;
     }
 }
