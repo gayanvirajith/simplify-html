@@ -23,7 +23,8 @@ body, html {
 
 /* -------------------------------- 
 
-Modules - replace text with background image thanks to https://github.com/CodyHouse, codyhouse.co
+Modules - replace text with background image thanks to
+https://github.com/CodyHouse, codyhouse.co
 
 -------------------------------- */
 .wc-img-replace {
@@ -111,11 +112,11 @@ Remove caption from image
   color: #333333;
   border-bottom: 1px solid rgba(198, 70, 61, 0); }
   .section-anchors:hover, .wc-section a:hover {
-    -webkit-transition: all 0.4s;
-    -moz-transition: all 0.4s;
-    -ms-transition: all 0.4s;
-    -o-transition: all 0.4s;
-    transition: all 0.4s;
+    -webkit-transition: border-color 0.2s;
+    -moz-transition: border-color 0.2s;
+    -ms-transition: border-color 0.2s;
+    -o-transition: border-color 0.2s;
+    transition: border-color 0.2s;
     border-color: #333333; }
 
 /* ------------------------------
@@ -192,8 +193,6 @@ Main navigation
         color: #666666;
         -webkit-transition: color, 0.2s;
         -moz-transition: color, 0.2s;
-        -ms-transition: color, 0.2s;
-        -o-transition: color, 0.2s;
         transition: color, 0.2s; }
         .no-touch .wc-main-nav a:hover {
           color: #666666; }
@@ -298,3 +297,42 @@ Main navigation
     max-width: 768px;
     text-align: center;
     color: white; }
+
+/* -------------------------------
+
+Button styles
+
+--------------------------------*/
+.btn {
+  margin-top: 15px;
+  display: inline-block;
+  border-radius: 0.25em;
+  padding: 10px;
+  font-weight: bold;
+  border-bottom: none !important;
+  text-decoration: none;
+  font-size: 13px;
+  font-size: 0.8125rem;
+  -webkit-transition: background 0.2s;
+  -moz-transition: background 0.2s;
+  transition: background 0.2s; }
+  .btn:active {
+    -webkit-transform: scale(0.96);
+    -moz-transform: scale(0.96);
+    -ms-transform: scale(0.96);
+    -o-transform: scale(0.96);
+    transform: scale(0.96); }
+
+.btn.red {
+  background: #c6463c;
+  color: white; }
+
+.no-touch .btn.red:hover {
+  background-color: #d26b63; }
+
+.btn.grey-dark {
+  background: #383835;
+  color: white; }
+
+.no-touch .btn.grey-dark:hover {
+  background-color: #52524e; }
