@@ -38,7 +38,8 @@ body, html {
 
 /* -------------------------------- 
 
-Modules - replace text with background image thanks to https://github.com/CodyHouse, codyhouse.co
+Modules - replace text with background image thanks to
+https://github.com/CodyHouse, codyhouse.co
 
 -------------------------------- */
 
@@ -133,7 +134,11 @@ Remove caption from image
   border-bottom: 1px solid rgba(198, 70, 61, 0);
 
   &:hover {
-    @include transition(all 0.4s);
+    -webkit-transition: border-color 0.2s;
+    -moz-transition: border-color 0.2s;
+    -ms-transition: border-color 0.2s;
+    -o-transition: border-color 0.2s;
+    transition: border-color 0.2s;
     border-color: darken($color-2, 20%);
   }
 }
@@ -326,4 +331,45 @@ Main navigation
     text-align: center;
     color: $color-white;
   }
+}
+
+
+/* -------------------------------
+
+Button styles
+
+--------------------------------*/
+.btn {
+  margin-top: 15px;
+  display: inline-block;
+  border-radius: 0.25em;
+  padding: 10px;
+  font-weight: bold;
+  border-bottom: none !important;
+  text-decoration: none;
+
+  @include font-size(13px);
+
+  -webkit-transition: background 0.2s;
+  -moz-transition: background 0.2s;
+  transition: background 0.2s;
+
+
+  &:active {
+    @include transform(scale(0.96));
+  }
+}
+.btn.red {
+  background: $color-3;
+  color: $color-white;
+}
+.no-touch .btn.red:hover {
+  background-color: lighten($color-3, 10%);
+}
+.btn.grey-dark {
+  background: $color-4;
+  color: $color-white;
+}
+.no-touch .btn.grey-dark:hover {
+  background-color: lighten($color-4, 10%);
 }
