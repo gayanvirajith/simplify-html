@@ -13,26 +13,26 @@ Primary style
 -------------------------------- */
 
 html * {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 *, *:after, *:before {
-    @include box-sizing(border-box);
+  @include box-sizing(border-box);
 }
 
 body {
-    font: {
-        size: 100%;
-        family: $primary-font; // variables inside partials > _variables.scss
-    }
-    color: $color-black;
-    background-color: $color-white;
+  font: {
+    size: 100%;
+    family: $primary-font; // variables inside partials > _variables.scss
+  }
+  color: $color-black;
+  background-color: $color-white;
 }
 
 
 body, html {
-    height: 100%;
+  height: 100%;
 }
 
 
@@ -43,12 +43,12 @@ Modules - replace text with background image thanks to https://github.com/CodyHo
 -------------------------------- */
 
 .wc-img-replace { /* replace text with a background-image */
-    display: inline-block;
-    overflow: hidden;
-	text-indent: 100%;
-	white-space: nowrap;
-    background-repeat: no-repeat;
-    background-position: center center;
+  display: inline-block;
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
 /* -------------------------------- 
@@ -57,16 +57,16 @@ Modules - reusable container thanks to https://github.com/CodyHouse, codyhouse.c
 
 -------------------------------- */
 
-.wc-container { 
-    width: 90%;
-    max-width: $L; // breakpoints inside partials > _layout.scss
-    margin: 0 auto;
+.wc-container {
+  width: 90%;
+  max-width: $L; // breakpoints inside partials > _layout.scss
+  margin: 0 auto;
 
-    &::after { /* clearfix */
-        content: '';
-        display: table;
-        clear: both;
-    }
+  &::after { /* clearfix */
+    content: '';
+    display: table;
+    clear: both;
+  }
 }
 
 
@@ -77,55 +77,65 @@ Remove caption from image
 -------------------------------- */
 
 .cd-img-replace { /* replace text with a background-image */
-    display: inline-block;
-    overflow: hidden;
-    text-indent: 100%;
-    white-space: nowrap;
+  display: inline-block;
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
 }
 
 .cd-scroll-down {
-    position: absolute;
-    @include center(x);
-    bottom: 20px;
-    width: 38px;
-    height: 44px;
-    background: url('./images/cd-arrow-bottom.svg') no-repeat center center;
+  position: absolute;
+  @include center(x);
+  bottom: 20px;
+  width: 38px;
+  height: 44px;
+  background: url('./images/cd-arrow-bottom.svg') no-repeat center center;
 }
 
 .wc-header {
-    position: absolute;
-    top: 0;
-    left: 0;;
-        background:transparent;
+  position: absolute;
+  top: 0;
+  left: 0;;
+  background:transparent;
 
-    width: 100%;
-    height: $header-height-S;
-    background: rgba($color-white, .95);
-    box-shadow: 0 1px 2px rgba($color-black, .2);
-    z-index: 1;        
-    @include clearfix;
+  width: 100%;
+  height: $header-height-S;
+  background: rgba($color-white, .95);
+  box-shadow: 0 1px 2px rgba($color-black, .2);
+  z-index: 1;
+  @include clearfix;
 
-    @include MQ(M) {
-        height: $header-height-M;
-        //background: transparent;
-        box-shadow: none;
+  @include MQ(M) {
+    height: $header-height-M;
+    //background: transparent;
+    box-shadow: none;
 
-        background: rgba($color-white, .5);
+    background: rgba($color-white, .5);
+  }
+
+  #wc-logo {
+    float:left;
+    img {
+      margin: 7px 0 0 0;
+      max-height: $header-height-S - 15;
+      display: block;
+      @include MQ(M) {
+        margin: 10px 0 0 0;
+        max-height: $header-height-M;
+      }
     }
+  }
+}
 
-    #wc-logo {
-        float:left;
-        img {
-            margin: 7px 0 0 0;
-            max-height: $header-height-S - 15; 
-            display: block;
-            @include MQ(M) { 
-                margin: 10px 0 0 0;
-                max-height: $header-height-M;
-            }
-        }
-    }
-    
+.section-anchors {
+  text-decoration: none;
+  color: darken($color-2, 20%);
+  border-bottom: 1px solid rgba(198, 70, 61, 0);
+
+  &:hover {
+    @include transition(all 0.4s);
+    border-color: darken($color-2, 20%);
+  }
 }
 
 /* ------------------------------
@@ -134,79 +144,79 @@ Main navigation
 
 -------------------------------*/
 .wc-main-nav {
-    float: right;
+  float: right;
+  height: $header-height-S;
+  width: 44px;
+  background: url('./images/cd-icon-menu.svg') no-repeat center center;
+  background-size: 44px 44px;
+  cursor: pointer;
+
+  ul {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    list-style:none;
+    @include transform(translateY(-100%));
+    &.is-visible {
+      @include transform(translateY($header-height-S));
+    }
+  }
+
+  a {
+    display: block;
     height: $header-height-S;
-    width: 44px;
-    background: url('./images/cd-icon-menu.svg') no-repeat center center;
-    background-size: 44px 44px;
-    cursor: pointer;
+    line-height: $header-height-S;
+    padding-left: 5%;
+    border-top: 1px solid darken($color-1, 5);
+    color: $color-2;
+    background: $color-1;
+    @include font-size(14px);
+    text-decoration:none;
+  }
+
+  @include MQ(M) {
+    width: auto;
+    height: $header-height-M;
+    background: none;
+    cursor: auto;
 
     ul {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        list-style:none;
-        @include transform(translateY(-100%));
-        &.is-visible {
-            @include transform(translateY($header-height-S));
-        }
+      position: static;
+      width: auto;
+      @include transform(translateY(0));
+      line-height: $header-height-M;
+      &.is-visible {
+        @include transform(translateY(0));
+      }
+    }
+
+    li {
+      display: inline-block;
+      margin-left: 1em;
     }
 
     a {
-        display: block;
-        height: $header-height-S;
-        line-height: $header-height-S;
-        padding-left: 5%;
-        border-top: 1px solid darken($color-1, 5);
+      display: inline-block;
+      height: auto;
+      line-height: normal;
+      background: transparent;
+      padding: .6em 1em;
+      border-top: none;
+      color: $color-2;
+      @include transition(color, .2s);
+      .no-touch &:hover {
         color: $color-2;
-        background: $color-1;
-        @include font-size(14px);
-        text-decoration:none;
+      }
+
+      &:hover, &:focus, &:active {
+        color: darken($color-2, 30%);
+      }
     }
-
-    @include MQ(M) {
-        width: auto;
-        height: $header-height-M;
-        background: none;
-        cursor: auto;
-
-        ul {
-            position: static;
-            width: auto;
-            @include transform(translateY(0));
-            line-height: $header-height-M;
-            &.is-visible {
-                @include transform(translateY(0));
-            }
-        }
-
-        li {
-            display: inline-block;
-            margin-left: 1em;
-        }
-
-        a {
-            display: inline-block;
-            height: auto;
-            line-height: normal;
-            background: transparent;
-            padding: .6em 1em;
-            border-top: none;
-            color: $color-2;
-            @include transition(color, .2s);
-            .no-touch &:hover {
-                color: $color-2;
-            }
-            
-            &:hover, &:focus, &:active {
-                color: darken($color-2, 30%);
-            }
-        }
-        li.active {
-            a {color: darken($color-2, 10%);}
-        }
+    li.active {
+      a {color: darken($color-2, 10%);}
     }
+  }
 }
 
 /* ------------------------------
@@ -215,102 +225,105 @@ Main navigation
 
 -------------------------------*/
 .wc-section {
-    min-height: 100%;
-    position: relative;
-    padding: 2em 0;
+  min-height: 100%;
+  position: relative;
+  padding: 2em 0;
 
-    &:nth-of-type(odd) {
-        background-color: $color-white;
-    }
+  &:nth-of-type(odd) {
+    background-color: $color-white;
+  }
 
-    &:nth-of-type(even) {
-        background-color: $color-1;
-    }
-    
-    .content-in {
-        position: absolute;
-        @include center;
-        width: 90%;
-        max-width: $M;
-        text-align: center;
-    }
+  &:nth-of-type(even) {
+    background-color: $color-1;
+  }
 
-    
+  .content-in {
+    position: absolute;
+    @include center;
+    width: 90%;
+    max-width: $M;
+    text-align: center;
+  }
+
+
+  h1 {
+    font-weight: 300;
+    text-transform: uppercase;
+    @include font-size(20px);
+  }
+
+  p {
+    line-height: 1.6;
+    color: $color-2;
+  }
+
+  a {
+    @extend .section-anchors;
+  }
+
+  @include MQ(M) {
+    h1, h2, h3, h4 { line-height: 1.6; color: $color-2;}
     h1 {
-        font-weight: 300;
-        text-transform: uppercase;
-        @include font-size(20px);
+      @include font-size(60px);
+    }
+    h2 {
+      @include font-size(45px);
+    }
+    h3 {
+      @include font-size(30px);
     }
 
     p {
-        line-height: 1.6;
-        color: $color-2;
+      @include font-size(20px);
+      line-height: 2;
     }
-
-    @include MQ(M) {
-        h1, h2, h3, h4 { line-height: 1.6; color: $color-2;}
-        h1 {
-            @include font-size(60px);
-        }
-        h2 {
-            @include font-size(45px);   
-        }
-        h3 {
-            @include font-size(30px);
-        }
-
-        p {
-            @include font-size(20px);
-            line-height: 2;
-        }
-    }
+  }
 }
 
 .wc-section-bg {
-    position: relative;
-    min-height: 100%;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
- 
+  position: relative;
+  min-height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 
 
-    &.wc-bg-1 {
-        background-image: url('./images/bg.jpg');
+
+  &.wc-bg-1 {
+    background-image: url('./images/bg.jpg');
+  }
+
+  @include MQ(M) {
+    h1, h2, h3, h4 {
+      line-height: 1.6;
+      text-shadow: #666 0px 1px 4px;
+    }
+    h1 {
+      @include font-size(60px);
+    }
+    h2 {
+      @include font-size(45px);
+    }
+    h3 {
+      @include font-size(30px);
     }
 
-    @include MQ(M) {
-        h1, h2, h3, h4 { 
-            line-height: 1.6;
-            text-shadow: #666 0px 1px 4px;
-        }
-        h1 {
-            @include font-size(60px);
-        }
-        h2 {
-            @include font-size(45px);   
-        }
-        h3 {
-            @include font-size(30px);
-        }
-
-        p {
-            @include font-size(20px);
-            line-height: 2;
-        }
+    p {
+      @include font-size(20px);
+      line-height: 2;
     }
+  }
 
-    @include MQ(L) {
-        background-attachment: fixed;
-    }
+  @include MQ(L) {
+    background-attachment: fixed;
+  }
 
-    .content-in {
-        position: absolute;
-        @include center;
-        width: 90%;
-        max-width: $M;
-        text-align: center;
-
-        color: $color-white;
-    }
+  .content-in {
+    position: absolute;
+    @include center;
+    width: 90%;
+    max-width: $M;
+    text-align: center;
+    color: $color-white;
+  }
 }
