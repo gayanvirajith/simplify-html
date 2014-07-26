@@ -18,7 +18,7 @@
   transition: $args;
 }
 
-@mixin border-radius($radius) {
+@mixin border-radius($radius:.25em) {
   -webkit-border-radius: $radius;
   -moz-border-radius: $radius;
   -ms-border-radius: $radius;
