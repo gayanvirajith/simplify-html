@@ -54,6 +54,13 @@ $(document).ready(function(){
             scrollTop: $($anchor.attr('href')).offset().top
         }, 1500);
         event.preventDefault();
+		$('.wc-nav-trigger').toggleClass('menu-is-open');
+      	mainNavigation.addClass('is-hidden').one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(){
+					//wait for the menu to be closed and do the rest
+					mainNavigation.removeClass('is-visible is-hidden has-transitions');
+					navigationContainer.removeClass('is-fixed');
+					$('.cd-nav-trigger').removeClass('menu-is-open');
+		});
     });
 
 });
