@@ -495,10 +495,6 @@ Main navigation
     }
   }
 
-  @include MQ(L) {
-    //background-attachment: fixed;
-  }
-
   .content-in {
     position: absolute;
     @include center;
