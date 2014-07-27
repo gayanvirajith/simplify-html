@@ -135,7 +135,7 @@ Remove caption from image
 
 .section-anchors {
   text-decoration: none;
-  color: $color-1;
+  color: $color-3;
   border-bottom: 1px solid rgba(198, 70, 61, 0);
 
   &:hover {
@@ -144,7 +144,7 @@ Remove caption from image
     -ms-transition: border-color 0.2s;
     -o-transition: border-color 0.2s;
     transition: border-color 0.2s;
-    border-color: darken($color-1, 5%);
+    border-color: darken($color-3, 10%);
   }
 }
 
@@ -249,7 +249,7 @@ Main navigation
             border-bottom: none;
 
             &:hover {
-                color: $color-2;
+                color: $color-3;
             }
         }
 
@@ -550,6 +550,76 @@ Button styles
   background-color: lighten($color-4, 10%);
 }
 
+
+
+#google-container {
+    position: relative;
+    width: 100%;
+    min-height: 200px;
+    background-color: $color-white;
+
+    @include MQ(M) {
+        height: 300px;
+    }
+
+    @include MQ(L) {
+        height: 600px;
+    } 
+    
+}
+
+#wc-google-map {
+    position: relative;
+    padding:0;
+    address {
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        padding: 1em 1em;
+        background-color: rgba($color-3, .9);
+        color: $color-white;
+        @include font-size(11px);
+        text-align: center;
+        //@include MQ(M) {
+          //  @include font-size(12px);
+            //text-align: center;
+        //}
+    }
+}
+
+#wc-zoom-in, #wc-zoom-out {
+    height: 32px;
+    width: 32px;
+    cursor: pointer;
+    margin-left: 10px;
+    background-color: rgba($color-3, .9);
+    background-repeat: no-repeat;
+    background-size: 32px 64px;
+    background-image: url('./images/cd-icon-controller.svg');
+
+    .no-touch &:hover {
+        background-color: rgba($color-3, 1);
+    }
+
+    @include MQ(M) {
+        margin-left: 50px;
+    }
+}
+
+#wc-zoom-in {
+    background-position: 50% 0;
+    margin-top: 10px;
+    margin-bottom: 1px;
+
+    @include MQ(M) {
+        margin-top: 50px;
+    }
+}
+
+#wc-zoom-out {
+    background-position: 50% -32px;
+}
 
 @include keyframes(wc-slide-in) {
     0% {
