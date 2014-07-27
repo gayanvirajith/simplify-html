@@ -113,7 +113,7 @@ Remove caption from image
 
 .section-anchors, .wc-section a {
   text-decoration: none;
-  color: #2c3e51;
+  color: #d36868;
   border-bottom: 1px solid rgba(198, 70, 61, 0); }
   .section-anchors:hover, .wc-section a:hover {
     -webkit-transition: border-color 0.2s;
@@ -121,7 +121,7 @@ Remove caption from image
     -ms-transition: border-color 0.2s;
     -o-transition: border-color 0.2s;
     transition: border-color 0.2s;
-    border-color: #233140; }
+    border-color: #c74141; }
 
 /* ------------------------------
 
@@ -227,7 +227,7 @@ Main navigation
     margin-left: 1.6em;
     border-bottom: none; }
     #wc-nav li a:hover {
-      color: #00bd9b; }
+      color: #d36868; }
   #wc-nav.is-fixed ul {
     /* when the user scrolls down, the navigation moves to the bottom right in Fixed position - as on touch devices */
     position: fixed;
@@ -501,11 +501,11 @@ Button styles
     transform: scale(0.96); }
 
 .btn.red {
-  background: #e84a64;
+  background: #d36868;
   color: white; }
 
 .no-touch .btn.red:hover {
-  background-color: #ee778b; }
+  background-color: #df8f8f; }
 
 .btn.grey-dark {
   background: white;
@@ -513,6 +513,59 @@ Button styles
 
 .no-touch .btn.grey-dark:hover {
   background-color: white; }
+
+#google-container {
+  position: relative;
+  width: 100%;
+  min-height: 200px;
+  background-color: white; }
+  @media only screen and (min-width: 768px) {
+    #google-container {
+      height: 300px; } }
+  @media only screen and (min-width: 1170px) {
+    #google-container {
+      height: 600px; } }
+
+#wc-google-map {
+  position: relative;
+  padding: 0; }
+  #wc-google-map address {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    padding: 1em 1em;
+    background-color: rgba(211, 104, 104, 0.9);
+    color: white;
+    font-size: 11px;
+    font-size: 0.6875rem;
+    text-align: center; }
+
+#wc-zoom-in, #wc-zoom-out {
+  height: 32px;
+  width: 32px;
+  cursor: pointer;
+  margin-left: 10px;
+  background-color: rgba(211, 104, 104, 0.9);
+  background-repeat: no-repeat;
+  background-size: 32px 64px;
+  background-image: url("./images/cd-icon-controller.svg"); }
+  .no-touch #wc-zoom-in:hover, .no-touch #wc-zoom-out:hover {
+    background-color: #d36868; }
+  @media only screen and (min-width: 768px) {
+    #wc-zoom-in, #wc-zoom-out {
+      margin-left: 50px; } }
+
+#wc-zoom-in {
+  background-position: 50% 0;
+  margin-top: 10px;
+  margin-bottom: 1px; }
+  @media only screen and (min-width: 768px) {
+    #wc-zoom-in {
+      margin-top: 50px; } }
+
+#wc-zoom-out {
+  background-position: 50% -32px; }
 
 @-webkit-keyframes wc-slide-in {
   0% {
